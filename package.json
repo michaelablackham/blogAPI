@@ -1,0 +1,11 @@
+{
+  "name": "blogapi",
+  "version": "1.0.0",
+  "description": "thinkful drill for a blog api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
