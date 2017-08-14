@@ -2,10 +2,28 @@
   "name": "blogapi",
   "version": "1.0.0",
   "description": "thinkful drill for a blog api",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.12.4",
+    "morgan": "^1.7.0",
+    "uuid": "^2.0.3"
+  },
+  "engines": {
+    "node": "4.4.3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelablackham/blogAPI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelablackham/blogAPI/issues"
+  },
+  "homepage": "https://github.com/michaelablackham/blogAPI#readme"
 }
