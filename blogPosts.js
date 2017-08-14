@@ -3,13 +3,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-
 const {BlogPosts} = require('./models');
-
-const app = express();
-
-//ROUTING
-const blogPostsRouter = require('./blogPosts');
 
 //Create example blog posts
 BlogPosts.create(
@@ -28,15 +22,13 @@ BlogPosts.create(
   'Charlie day'
 );
 
-app.use('/', blogPostsRouter);
-
 //simple get request to see json objects of blog posts
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.json(BlogPosts.get());
 });
 
 //post request to add new items to feed of blog posts
-app.post('/', jsonParser, (req, res) => {
+router.post('/', jsonParser, (req, res) => {
   //require certain fields (found in modules.js)
   const requiredFields = ['title','content','author'];
   //loop through each required field
@@ -58,14 +50,14 @@ app.post('/', jsonParser, (req, res) => {
 });
 
 //DELETE request
-app.delete('//:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   //Get the parameter (id) and find blog post with that ID and delete
   BlogPosts.delete(req.params.id);
   res.status(204).end();
 });
 
 //Put request
-app.put('//:id', jsonParser, (req, res) => {
+router.put('/:id', jsonParser, (req, res) => {
   //require certain fields (found in modules.js)
   const requiredFields = ['title','content','author'];
   for (let i=0; i<requiredFields.length; i++) {

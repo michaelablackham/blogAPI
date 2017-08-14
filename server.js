@@ -1,12 +1,10 @@
 //Required modules and middleware etc
 const express = require('express');
 const morgan = require('morgan');
-
-//calling/activting above constants - call node/express
-const app = express();
-
 //ROUTING
 const blogPostsRouter = require('./blogPosts');
+//calling/activting above constants - call node/express
+const app = express();
 
 // log the http layer
 app.use(morgan('common'));
